@@ -1,5 +1,5 @@
-import { Briefcase, Package, Clock, CheckCircle, AlertCircle, Send, FileX, Calendar, Edit, Eye, ArrowRight, TrendingUp, DollarSign } from 'lucide-react';
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, Area, AreaChart } from 'recharts';
+import { Briefcase, Package, Clock, CheckCircle, AlertCircle, Send, FileX, Edit, Eye, TrendingUp } from 'lucide-react';
+import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { useState } from 'react';
 
 interface CompactCardProps {

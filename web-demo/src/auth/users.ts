@@ -22,7 +22,7 @@ export const USER_NOIBO: LoginUser = {
 };
 
 export const USER_PTT: LoginUser = {
-  username: "ptt",
+  username: "truyenthong",
   email: "ptt@vna.com",
   password: "123456",
   type: "phongtuyenthong",

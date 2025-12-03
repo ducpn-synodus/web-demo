@@ -4,6 +4,7 @@ import VendorLayout from "./components/VendorLayout";
 import Layout from "./components/Layout";
 import { LOGIN_USERS } from "./auth/users";
 import Dashboard from "./components/noibo/Dashboard";
+import PhongTruyenThong from "./components/phongtuyenthong/headerMain";
 
 type UserRole = "vendor" | "noibo" | "phongtuyenthong";
 type AuthUser = {
@@ -12,7 +13,6 @@ type AuthUser = {
   email: string;
   role: UserRole;
 };
-
 
 export default function App() {
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -25,7 +25,7 @@ export default function App() {
         queueMicrotask(() => setUser(parsed));
       }
     } catch (err) {
-      console.log('err', err)
+      console.log("err", err);
       // ignore parse errors
     }
   }, []);
@@ -40,7 +40,7 @@ export default function App() {
       localStorage.removeItem("auth");
       localStorage.removeItem("rememberMe");
     } catch (err) {
-      console.log('err', err)
+      console.log("err", err);
       // ignore storage errors
     }
     setUser(null);
@@ -59,14 +59,21 @@ export default function App() {
     return <Dashboard onLogout={handleLogout} />;
   }
 
+  if (user.role === "phongtuyenthong") {
+    return <PhongTruyenThong onLogout={handleLogout} />;
+  }
+
   return (
     <Layout onMenuChange={() => {}} onLogout={handleLogout}>
       <div className="p-6">
         <h2 className="text-gray-700 mb-2">Xin chào, {user.name}</h2>
         <p className="text-gray-600">
-          Tài khoản hiện tại thuộc vai trò <span className="font-medium">{user.role}</span>.
+          Tài khoản hiện tại thuộc vai trò{" "}
+          <span className="font-medium">{user.role}</span>.
         </p>
-        <p className="text-gray-600 mt-2">Giao diện dành cho vai trò này đang được chuẩn bị.</p>
+        <p className="text-gray-600 mt-2">
+          Giao diện dành cho vai trò này đang được chuẩn bị.
+        </p>
       </div>
     </Layout>
   );
