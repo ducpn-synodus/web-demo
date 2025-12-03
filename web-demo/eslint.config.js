@@ -13,6 +13,9 @@ export default defineConfig([
       'react-refresh/only-export-components': 'off',
       '@typescript-eslint/no-explicit-any': 'off'
     },
+    compilerOptions: {
+      noUnusedLocals: false,
+    },
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
